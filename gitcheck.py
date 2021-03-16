@@ -28,7 +28,7 @@ subdomainList_ = list(f_.read().split())
 f_.close()
 len_ = len(subdomainList_)
 
-print(f"You got a total of {len} subdomains:\n", subdomainList_)
+print(f"You got a total of {len_} subdomains:\n")
 
 try:
     for i in subdomainList_:
