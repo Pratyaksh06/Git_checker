@@ -28,8 +28,8 @@ subdomainList_ = list(f_.read().split())
 f_.close()
 len_ = len(subdomainList_)
 
-print(f"You got a total of {len_} subdomains:\n")
-
+print(f"You got a total of {len_} subdomains\n")
+print("Checking domains for /.git files: \n")
 try:
     for i in subdomainList_:
         req = re.head(f"https://{i}/.git")
@@ -38,7 +38,7 @@ try:
             data = f"https://{i}/.git".read()
             print(data)
         else:
-            continue
+            print(f"https://{i}/.git :",req.status_code)
 except re.ConnectionError:
     print("Connection failed")
 
